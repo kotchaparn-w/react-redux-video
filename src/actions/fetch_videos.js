@@ -1,11 +1,13 @@
 export const FETCH_VIDEOS = 'fect_videos';
 
-export function fetchVideos() {
+export default function fetchVideos(content) { 
+
+    console.log(content);
+
     return{
         type: FETCH_VIDEOS,
         payload: {
-            id: 3,
-            content: 'zxcvbn'
+            
         }
     }
 }
