@@ -1,7 +1,14 @@
+import { FETCH_VIDEOS } from '../actions/fetch_videos';
 
-export default function() {
-    return[
-        {id: 1, content: 'asdfg'},
-        {id: 2, content: 'jkl;'}
-    ]
+export default function(state={}, action) {
+
+    console.log(action.payload);
+    switch (action.type){
+        case FETCH_VIDEOS:
+            return action.payload.data
+        default: 
+            return state;
+    }
+
+    
 }
