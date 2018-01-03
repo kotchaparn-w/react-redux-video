@@ -1,0 +1,9 @@
+.video_lists{
+    height: 12.45%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.header {
+    font-size : 1.2em !important;
+}
