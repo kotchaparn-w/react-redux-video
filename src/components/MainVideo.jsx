@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import { Grid, Embed } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import _ from 'lodash'
 
 
 class MainVideo extends Component{
+
     render(){
-        return(
-            <Grid.Column width={12}>
-                <Embed
-                    id='O6Xo21L0ybE'
-                    placeholder='/assets/images/image-16by9.png'
-                    source='youtube'
-                />
-            </Grid.Column>
-        )
+        // render only when there is data in the main video
+        if (!_.isEmpty(this.props.mainVideo.videos.mainVideo)){
+            console.log(this.props);
+            const videoId = this.props.mainVideo.videos.mainVideo.id.videoId;
+            const videoThumbnail = this.props.mainVideo.videos.mainVideo.snippet.thumbnails.high.url;
+            return(
+                <Grid.Column width={12}>
+                    <Embed
+                        id={videoId}
+                        placeholder={videoThumbnail}
+                        source='youtube'
+                    />
+                </Grid.Column>
+            )
+        } else {
+            return <div/>
+        }
+        
     }
 }
 
-export default MainVideo;
+function mapStateToProps(mainVideo){
+    return {mainVideo}
+}
+
+export default connect(mapStateToProps)(MainVideo);

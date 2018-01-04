@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Input } from 'semantic-ui-react';
 import { connect } from "react-redux";
-import  { bindActionCreators } from "redux";
-import  fetchVideos  from "../actions/fetch_videos";
+// import  { bindActionCreators } from "redux";
+import  * as action  from "../actions/fetch_videos";
 
 
 class SearchBar extends Component {
@@ -26,8 +26,8 @@ class SearchBar extends Component {
     }
 }
 
-function mapDispatchtoProps(dispatch){
-    return bindActionCreators({fetchVideos},dispatch)
-}
+// function mapDispatchtoProps(dispatch){
+//     return bindActionCreators({fetchVideos},dispatch)
+// }
 
-export default connect(null, mapDispatchtoProps)(SearchBar);
+export default connect(null, action)(SearchBar);
