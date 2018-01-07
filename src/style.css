@@ -1,9 +1,18 @@
 .video_lists{
-    height: 12.45%;
+    height: 50%;
     overflow: scroll;
     overflow-x: hidden;
 }
 
 .header {
     font-size : 1.2em !important;
+}
+
+.video_title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.channel_title{
+    margin: 0px;
 }

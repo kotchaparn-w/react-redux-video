@@ -9,7 +9,7 @@ import * as action from '../actions/update_main_vid';
 class VideosLists extends Component{
 
     render(){        
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <Grid.Column width={4} className={_.isEmpty(this.props.videosState.videos) ? "" : "video_lists"}>
                 {this.props.videosState.videos.lists.map(video=>{
@@ -17,8 +17,8 @@ class VideosLists extends Component{
                         <Card fluid key={video.id.videoId} style={{cursor: 'pointer'}}
                         image={video.snippet.thumbnails.medium.url}
                         header={video.snippet.title}
-                        meta={`Published on: ${moment(video.snippet.publishedAt).format("MMM DD, YYYY")}`}
-                        description={`By: ${video.snippet.channelTitle}`}
+                        meta={`Published on ${moment(video.snippet.publishedAt).format("MMM DD, YYYY")}`}
+                        description={`By ${video.snippet.channelTitle}`}
                         onClick={()=>this.props.updateMainVid(video.id.videoId)}
                         />
                     )

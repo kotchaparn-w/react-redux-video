@@ -4,7 +4,7 @@ import SearchBar from './Search_Bar';
 
 const MainHeader = () => (
     <Segment>
-        <Grid columns='equal'>
+        <Grid container columns='equal'>
         <Grid.Column>
             <Header as='h3' ><Icon inverted color='red' name="youtube play"/>YouDux</Header>
         </Grid.Column>
